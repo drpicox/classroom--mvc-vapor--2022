@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Provider } from "react-redux";
+import { useMemo } from "react";
+import { createAppStore } from "./store";
+import { SorterButtons } from "./components/sorter";
+import { ViewsContainer } from "./components/ViewsContainer";
+import { NewGameButton } from "./components/games";
 
-function App() {
+export function App({ initialState }) {
+  const store = useMemo(() => createAppStore(initialState), [initialState]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <header className="App-header">
+          <SorterButtons />
+          <div className="spacing" />
+          <NewGameButton />
+        </header>
+        <main>
+          <ViewsContainer />
+        </main>
+      </div>
+    </Provider>
   );
 }
-
-export default App;

@@ -1,3 +1,30 @@
+# How To Run
+
+1. Setup when cloned:
+
+   $ yarn
+
+2. Run all the tests:
+
+   $ yarn test
+
+3. Run Redux (P4) tests only:
+
+   $ yarn test-redux
+
+4. Run React (P5) tests only:
+
+   $ yarn test-react
+
+**Hints**:
+
+While running, press "w" to show the test menu
+
+- press "p" to select a testfile, write a framgent of the name (ex 12)
+- press "t" to select a test inside the file, write a framgent of the name (ex selectViews)
+
+Remember to have 100% code coverage.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
